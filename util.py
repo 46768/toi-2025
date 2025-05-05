@@ -3,7 +3,7 @@ import sys
 import subprocess
 
 makeTemplate = '''sol : main.cpp
-\tg++ -o sol main.cpp
+\tg++ -DEVAL -std=gnu++17 -O2 -pipe -s -o sol main.cpp
 
 .PHONY: run
 run : sol

@@ -10,6 +10,11 @@ run : sol
 \t./sol
 '''
 
+makeTemplatePython = '''.PHONY: run
+run : main.py
+\tpython3 main.py
+'''
+
 mainfile = '''#include <iostream>
 
 void solve() {
@@ -47,8 +52,12 @@ if os.path.exists(f'./solutions/{pname}/'):
 
 
 os.mkdir(f'./solutions/{pname}/')
-mainF = open(f'./solutions/{pname}/main.cpp', 'w')
 makeF = open(f'./solutions/{pname}/Makefile', 'w')
+if len(sys.argv) == 3 and sys.argv[2] == 'py':
+    mainF = open(f'./solutions/{pname}/main.py', 'w')
+    makeF.write(makeTemplatePython.format(oname=pname))
+    exit()
+mainF = open(f'./solutions/{pname}/main.cpp', 'w')
 if len(sys.argv) == 2:
     mainF.write(mainfile)
 elif len(sys.argv) == 3 and sys.argv[2] == 'alt':

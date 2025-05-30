@@ -1,0 +1,1 @@
+print((lambda x:x+[lambda y:'#'if all(len(z)<=1 for z in y.split('$'))else'',lambda y:str(list(reversed(sorted(map(len,y.split('$')))))[0])][len(x.replace('$',''))&1](x))((lambda s1,s2:''.join([(lambda x:"$w"[int(s1[x%len(s1)].lower()in'love'or s2[x%len(s2)].lower()in'love')])(y) for y in range(len(s1) if len(s1)>len(s2) else len(s2))]))(input(),input())))

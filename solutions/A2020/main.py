@@ -1,1 +1,1 @@
-print(list(reversed(sorted([len(x)for x in(lambda y,u:(lambda v:[(lambda t,s,ss:[(r,s.append(v[r]),ss.append(r))[0]for r in s if (v[r] not in s) or (r not in ss)])(z,[z],[]) for z in range(u)if z not in y])({i:int(input())-1 for i in range(u)}))([],int(input()))])))[0])
+print(list(reversed(sorted([len(x)for x in(lambda y,u:(lambda v:[(lambda t,s,ss:[(r,s.append(v[r]),ss.add(r),y.add(r))[0]for r in s if r not in ss])(z,[z],set()) for z in range(u)if (z not in y)])({i:int(input())-1 for i in range(u)}))(set(),int(input()))])))[0])
